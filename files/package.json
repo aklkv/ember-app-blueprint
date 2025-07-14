@@ -20,8 +20,8 @@
     "lint:format": "prettier . --cache --check",
     "lint:hbs": "ember-template-lint .",
     "lint:hbs:fix": "ember-template-lint . --fix",
-    "lint:js": "eslint . --cache",
-    "lint:js:fix": "eslint . --fix<% if (typescript) { %>",
+    "lint:js": "NODE_OPTIONS='--experimental-require-module' eslint . --cache",
+    "lint:js:fix": "NODE_OPTIONS='--experimental-require-module' eslint . --fix<% if (typescript) { %>",
     "lint:types": "glint<% } %>",
     "start": "vite",
     "test": "vite build --mode development && testem ci"

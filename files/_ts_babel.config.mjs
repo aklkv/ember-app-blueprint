@@ -1,4 +1,3 @@
-import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
 
 import {
@@ -6,9 +5,7 @@ import {
   templateCompatSupport,
 } from '@embroider/compat/babel';
 
-const require = createRequire(import.meta.url);
-
-module.exports = {
+export default {
   plugins: [
     [
       '@babel/plugin-transform-typescript',
@@ -34,7 +31,7 @@ module.exports = {
       'module:decorator-transforms',
       {
         runtime: {
-          import: require.resolve('decorator-transforms/runtime-esm'),
+          import: 'decorator-transforms/runtime-esm',
         },
       },
     ],
